@@ -13,13 +13,13 @@ class UserTypesTableSeeder extends Seeder
     {
         $data = [
             0 => [
-                'user_id' => '2',
+                'user_id' => '3',
                 'child_id' => '1',
                 'type' => 'user',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             1 => [
-                'user_id' => '3',
+                'user_id' => '4',
                 'child_id' => '1',
                 'type' => 'company',
                 'created_at' => date('Y-m-d H:i:s'),
