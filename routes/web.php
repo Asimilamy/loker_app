@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,19 +12,16 @@
 |
 */
 
-Route::get('/', function() {
-    return view('pages/auth/user')->with('uri', 'user');
-});
+Route::get('/', 'LoginController@index');
+Route::get('/{type}', 'LoginController@index')->where('type', '[user, company, admin]');
 
-Route::get('/company', function() {
-    return view('pages/auth/company')->with('uri', 'company');
+Route::get('/login', function() {
+    return redirect('/');
 });
+Route::post('/login', 'LoginController@login')->name('login');
+Route::get('/logout', 'LoginController@logout');
 
-Route::get('/admin', function() {
-    return view('pages/auth/admin')->with('uri', 'admin');
-});
-
-Auth::routes();
+// Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
     // Route::get('/', 'HomeController@index')->name('home');

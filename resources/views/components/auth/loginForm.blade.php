@@ -2,16 +2,18 @@
     <div role="document" class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-        <h4 id="login-modalLabel" class="modal-title">Company Login</h4>
+        <h4 id="login-modalLabel" class="modal-title">{{ ucwords($uri) }} Login</h4>
         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
         </div>
         <div class="modal-body">
-            <form action="customer-orders.html" method="get">
+            <div class="err-msg"></div>
+            <form action="" method="POST" id="loginForm">
+                @csrf
                 <div class="form-group">
-                    <input id="email_login" type="text" name="email" placeholder="email" class="form-control">
+                    <input id="email_login" type="text" name="login_id" placeholder="Email or Username" class="form-control" required autofocus>
                 </div>
                 <div class="form-group">
-                    <input id="password_login" type="password" name="password" placeholder="password" class="form-control">
+                    <input id="password_login" type="password" name="password" placeholder="Password" class="form-control" required>
                 </div>
                 <p class="text-center">
                 <button class="btn btn-template-outlined"><i class="fa fa-sign-in"></i> Log in</button>
