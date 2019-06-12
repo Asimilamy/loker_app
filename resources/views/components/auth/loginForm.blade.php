@@ -9,6 +9,7 @@
             <div class="err-msg"></div>
             <form action="" method="POST" id="loginForm">
                 @csrf
+                <input type="hidden" name="type" value="{{ $uri }}">
                 <div class="form-group">
                     <input id="email_login" type="text" name="login_id" placeholder="Email or Username" class="form-control" required autofocus>
                 </div>

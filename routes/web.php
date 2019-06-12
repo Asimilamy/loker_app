@@ -20,6 +20,7 @@ Route::get('/login', function() {
     return redirect('/');
 });
 Route::post('/login', 'LoginController@login')->name('login');
+Route::post('/register', 'RegisterController@register')->name('register');
 Route::get('/logout', 'LoginController@logout');
 
 // Auth::routes();

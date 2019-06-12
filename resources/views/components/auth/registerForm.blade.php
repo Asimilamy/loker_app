@@ -6,7 +6,10 @@
         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
         </div>
         <div class="modal-body">
-            <form action="{{ url('login') }}" method="POST">
+            <div class="err-msg"></div>
+            <form action="" method="POST" id="registerForm">
+                @csrf
+                <input type="hidden" name="type" value="{{ $uri }}">
                 <div class="form-group">
                     <input id="email_register" type="text" name="email" placeholder="email" class="form-control" required autofocus>
                 </div>

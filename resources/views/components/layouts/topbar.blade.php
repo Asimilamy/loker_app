@@ -14,12 +14,12 @@
                         <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
                     </ul>
                     <div class="login">
-                        <a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn">
+                        <a href="#" data-toggle="modal" data-target="#login-modal" class="login-btn login-modal">
                             <i class="fa fa-sign-in"></i>
                             <span class="d-none d-md-inline-block">Sign In</span>
                         </a>
                         @if ($uri != 'admin')
-                            <a href="#" data-toggle="modal" data-target="#register-modal" class="signup-btn">
+                            <a href="#" data-toggle="modal" data-target="#register-modal" class="signup-btn signup-modal">
                                 <i class="fa fa-address-book"></i><span class="d-none d-md-inline-block">Register</span>
                             </a>
                         @endif

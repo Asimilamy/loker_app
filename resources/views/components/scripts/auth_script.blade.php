@@ -1,16 +1,33 @@
 <script>
     $(document).off('submit', '#loginForm').on('submit', '#loginForm', function(e) {
         e.preventDefault();
-        doLogin(this);
+        submit_form('{{ url('login') }}', this);
     });
 
-    function doLogin(form) {
+    $(document).off('submit', '#registerForm').on('submit', '#registerForm', function(e) {
+        e.preventDefault();
+        submit_form('{{ url('register') }}', this);
+    });
+
+    $(document).off('click', '.login-modal').on('click', '.login-modal', function() {
+        hide_error();
+    });
+
+    $(document).off('click', '.signup-modal').on('click', '.signup-modal', function() {
+        hide_error();
+    });
+
+    function hide_error() {
         $('.err-msg').slideUp(function() {
             $(this).html('');
         });
+    }
+
+    function submit_form(url, form) {
+        hide_error();
         $.ajax({
             contentType: "application/json",
-            url: '{{ url('login') }}',
+            url: url,
             processData: false,
             contentType: false,
             cache: false,
