@@ -62,6 +62,7 @@
             <!-- Authentication Links -->
             @auth
                 <!-- Navbar Start-->
+                <div class="top-bar"></div>
                 @include('components.layouts.mynavbar')
                 <!-- Navbar End-->
             @endauth
@@ -73,6 +74,10 @@
             @endguest
 
             @auth
+                <!-- Breadcrumb Start -->
+                @include('components.layouts.breadcrumb')
+                <!-- Breadcrumb End -->
+
                 <!-- Content Start -->
                 @yield('content')
                 <!-- Content End -->

@@ -1,3 +1,5 @@
+<?php $uri = !isset($uri) ? session('type') : $uri ?>
+
 <div class="top-bar">
     <div class="container">
         <div class="row d-flex align-items-center">
