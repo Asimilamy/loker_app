@@ -12,7 +12,8 @@ class CompaniesTableSeeder extends Seeder
     public function run()
     {
         DB::table('companies')->insert([
-            'name' => 'company'
+            'name' => 'company',
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }

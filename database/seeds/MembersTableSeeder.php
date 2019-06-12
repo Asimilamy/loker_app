@@ -12,7 +12,8 @@ class MembersTableSeeder extends Seeder
     public function run()
     {
         DB::table('members')->insert([
-            'name' => 'member'
+            'name' => 'member',
+            'created_at' => date('Y-m-d H:i:s'),
         ]);
     }
 }
