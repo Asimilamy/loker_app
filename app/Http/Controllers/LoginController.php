@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    protected $type = ['user', 'company', 'admin'];
-
     protected $username;
 
     public function __construct()
@@ -16,11 +14,19 @@ class LoginController extends Controller
         $this->username = $this->findUsername();
     }
 
-    public function index($type = 'user')
+    public function user_login()
     {
-        if (in_array($type, $this->type)) {
-            return view('pages/auth/auth')->with('uri', $type);
-        }
+        return view('pages/auth/auth')->with('uri', 'user');
+    }
+
+    public function company_login()
+    {
+        return view('pages/auth/auth')->with('uri', 'company');
+    }
+
+    public function admin_login()
+    {
+        return view('pages/auth/auth')->with('uri', 'admin');
     }
 
     public function findUsername()

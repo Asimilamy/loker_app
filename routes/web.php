@@ -12,8 +12,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', 'LoginController@index');
-Route::get('/{type}', 'LoginController@index')->where('type', '[user, company, admin]');
+Route::get('/', 'LoginController@user_login');
+Route::get('/company', 'LoginController@company_login');
+Route::get('/admin', 'LoginController@admin_login');
 
 Route::get('/login', function() {
     return redirect('/');

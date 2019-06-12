@@ -37,6 +37,22 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">
+                            {{ Auth::user()->name }} <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-item">
+                                <a href="{{ url('account') }}" class="nav-link">Accounts</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="{{ url('settings') }}" class="nav-link">Settings</a>
+                            </li>
+                            <li class="dropdown-item">
+                                <a href="{{ url('logout') }}" class="nav-link">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <div id="search" class="collapse clearfix">
