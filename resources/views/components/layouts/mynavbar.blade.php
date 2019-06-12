@@ -10,33 +10,12 @@
             </button>
             <div id="navigation" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">
-                            {{ __('Home') }} <b class="caret"></b>
+                    <li class="nav-item">
+                        <a href="{{ url('home') }}">
+                            {{ __('Home') }}
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item">
-                                <a href="index.html" class="nav-link">Option 1: Default Page</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="index2.html" class="nav-link">Option 2: Application</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="index3.html" class="nav-link">Option 3: Startup</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="index4.html" class="nav-link">Option 4: Agency</a>
-                            </li>
-                            <li class="dropdown-item dropdown-submenu">
-                                <a id="navbarDropdownMenuLink2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Dropdown link</a>
-                                <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="#" class="nav-link">Action</a></li>
-                                    <li class="dropdown-item"><a href="#" class="nav-link">Another action</a></li>
-                                    <li class="dropdown-item"><a href="#" class="nav-link">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </li>
+                    @include('components.layouts.navbar.' . session('type'))
                     <li class="nav-item dropdown">
                         <a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle">
                             {{ Auth::user()->name }} <b class="caret"></b>
@@ -44,9 +23,6 @@
                         <ul class="dropdown-menu">
                             <li class="dropdown-item">
                                 <a href="{{ url('account') }}" class="nav-link">Accounts</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="{{ url('settings') }}" class="nav-link">Settings</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="{{ url('logout') }}" class="nav-link">Logout</a>
