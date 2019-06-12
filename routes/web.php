@@ -12,7 +12,15 @@
 */
 
 Route::get('/', function() {
-    return view('pages/user/welcome');
+    return view('pages/auth/user')->with('uri', 'user');
+});
+
+Route::get('/company', function() {
+    return view('pages/auth/company')->with('uri', 'company');
+});
+
+Route::get('/admin', function() {
+    return view('pages/auth/admin')->with('uri', 'admin');
 });
 
 Auth::routes();
